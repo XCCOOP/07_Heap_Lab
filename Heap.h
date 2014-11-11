@@ -46,4 +46,53 @@ private:
   void trickleDown(unsigned long index);  
 };
 
-#include "Heap.ipp"
+//heap.ipp starts here
+
+#include <string>
+
+template<class Pri, class T>
+Heap<Pri,T>::Heap(){
+  arrSize = START_SIZE;
+  numItems = 0;
+  backingArray = new std::pair<Pri, T>[START_SIZE];
+}
+
+template<class Pri, class T>
+Heap<Pri,T>::~Heap(){
+  //TODO
+}
+
+template<class Pri, class T>
+void Heap<Pri,T>::grow(){
+  //TODO
+}
+
+template<class Pri, class T>
+void Heap<Pri,T>::add(std::pair<Pri,T> toAdd){
+	if(numItems == 0) {
+		backingArray[0]->Pri = toAdd->Pri;
+		backingArray[0]->T = toAdd->T;
+	}
+}
+
+template<class Pri, class T>
+void Heap<Pri,T>::bubbleUp(unsigned long index){
+  //TODO
+}
+
+template<class Pri, class T>
+void Heap<Pri,T>::trickleDown(unsigned long index){
+  //TODO
+}
+
+template<class Pri, class T>
+std::pair<Pri,T> Heap<Pri,T>::remove(){
+  //TODO
+  std::pair<Pri,T> tmp;
+  return tmp;
+}
+
+template<class Pri, class T>
+unsigned long Heap<Pri,T>::getNumItems(){
+  return numItems;
+}
