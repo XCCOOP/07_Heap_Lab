@@ -81,8 +81,8 @@ void Heap<Pri,T>::grow(){
 		tempArray[i] = backingArray[i];
 	}
 
+	delete[] backingArray;
 	backingArray = tempArray;
-	delete tempArray;
 }
 
 template<class Pri, class T>
